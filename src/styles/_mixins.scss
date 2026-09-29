@@ -1,0 +1,76 @@
+@use 'variables' as *;
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin card-base {
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+}
+
+@mixin card-hover {
+  &:hover {
+    border-color: $color-primary;
+    box-shadow: 0 2px 8px $color-primary-shadow;
+  }
+}
+
+@mixin card-elevated-hover {
+  &:hover {
+    border-color: $color-primary;
+    box-shadow: 0 4px 12px $color-primary-shadow;
+    transform: translateY(-2px);
+  }
+}
+
+@mixin primary-link {
+  color: $color-primary;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@mixin section-heading {
+  font-size: $font-size-md;
+  font-weight: $font-semibold;
+  color: $color-text-secondary;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid $color-border-light;
+}
+
+@mixin label-text {
+  font-size: $font-size-xxs;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: $color-text-light;
+}
+
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin responsive-grid($min-width: 200px) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($min-width, 1fr));
+  gap: 0.75rem;
+}
